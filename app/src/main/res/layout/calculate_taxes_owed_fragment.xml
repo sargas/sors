@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="net.neoturbine.sors.CalculateTaxesOwedViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CalculateTaxesOwed">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:text="@string/calculate_taxes_title" />
+
+        <!--suppress AndroidUnknownAttribute -->
+        <Spinner
+            android:id="@+id/filingStatusPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:selectedItemPosition="@={vm.filingStatusPosition}" />
+
+        <EditText
+            android:hint="@string/taxable_income_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={vm.taxableIncome}"
+            android:inputType="number"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{vm.calculatedTaxesOwed}" />
+
+    </LinearLayout>
+</layout>

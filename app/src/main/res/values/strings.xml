@@ -1,3 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Sors</string>
+
+    <string name="filing_status_single" tools:keep="@string/filing_status_single">Single</string>
+    <string name="filing_status_married" tools:keep="@string/filing_status_married">Married or qualifying Widow/Widower</string>
+    <string name="calculate_taxes_title">Estimate Your Taxes</string>
+    <string name="taxable_income_hint">Taxable Income</string>
 </resources>

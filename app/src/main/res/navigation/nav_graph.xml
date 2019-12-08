@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calculateTaxesOwed">
+
+    <fragment
+        android:id="@+id/calculateTaxesOwed"
+        android:name="net.neoturbine.sors.CalculateTaxesOwed"
+        android:label="calculate_taxes_owed_fragment"
+        tools:layout="@layout/calculate_taxes_owed_fragment" />
+</navigation>
