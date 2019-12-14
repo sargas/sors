@@ -2,7 +2,12 @@
     <string name="app_name">Sors</string>
 
     <string name="filing_status_single" tools:keep="@string/filing_status_single">Single</string>
-    <string name="filing_status_married" tools:keep="@string/filing_status_married">Married or qualifying Widow/Widower</string>
+    <string name="filing_status_single_description" tools:ignore="UnusedResources">Most unmarried people will file with this status. If you are not currently married but have dependants, you may be able to file as head of household or qualifying widow(er) instead.</string>
+    <string name="filing_status_married" tools:keep="@string/filing_status_married">Married and Filing Jointly or Qualifying Widow(er)</string>
+    <string name="filing_status_married_description">Most married people will file with this status. Also select this if you have dependants and your spouse passed away in the last two tax years.</string>
     <string name="calculate_taxes_title">Estimate Your Taxes</string>
     <string name="taxable_income_hint">Taxable Income</string>
+    <string name="welcome_text">This App will estimate your Federal Tax Refund assuming it is very simple &#8212; tax credits, income that would not be on a W-2, most deductions, and other taxable circumstances are unknown to this App.</string>
+    <string name="next_button">Next</string>
+    <string name="filing_status_chooser_help_text">Will You File As:</string>
 </resources>

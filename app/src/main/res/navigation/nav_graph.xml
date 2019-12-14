@@ -3,11 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/calculateTaxesOwed">
+    app:startDestination="@id/welcomeScreen">
 
     <fragment
         android:id="@+id/calculateTaxesOwed"
         android:name="net.neoturbine.sors.CalculateTaxesOwed"
         android:label="calculate_taxes_owed_fragment"
         tools:layout="@layout/calculate_taxes_owed_fragment" />
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="net.neoturbine.sors.WelcomeScreen"
+        android:label="fragment_welcome_screen"
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreen_to_filingStatusChooserFragment"
+            app:destination="@id/filingStatusChooserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/incomeSpecifier"
+        android:name="net.neoturbine.sors.IncomeSpecifier"
+        android:label="income_specifier_fragment"
+        tools:layout="@layout/income_specifier_fragment" >
+        <action
+            android:id="@+id/action_incomeSpecifier_to_deductionsSpecifier"
+            app:destination="@id/deductionsSpecifier" />
+    </fragment>
+    <action
+        android:id="@+id/startWelcome"
+        app:destination="@id/welcomeScreen"
+        app:popUpTo="@id/welcomeScreen" />
+    <fragment
+        android:id="@+id/filingStatusChooserFragment"
+        android:name="net.neoturbine.sors.FilingStatusChooserFragment"
+        android:label="fragment_filing_status_chooser_list"
+        tools:layout="@layout/fragment_filing_status_chooser_list" >
+        <action
+            android:id="@+id/action_filingStatusChooserFragment_to_incomeSpecifier"
+            app:destination="@id/incomeSpecifier" />
+    </fragment>
+    <fragment
+        android:id="@+id/deductionsSpecifier"
+        android:name="net.neoturbine.sors.DeductionsSpecifier"
+        android:label="deductions_specifier_fragment"
+        tools:layout="@layout/deductions_specifier_fragment" >
+        <action
+            android:id="@+id/action_deductionsSpecifier_to_calculatedTaxDisplay"
+            app:destination="@id/calculatedTaxDisplay" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculatedTaxDisplay"
+        android:name="net.neoturbine.sors.CalculatedTaxDisplay"
+        android:label="calculated_tax_display_fragment"
+        tools:layout="@layout/calculated_tax_display_fragment" />
 </navigation>

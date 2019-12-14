@@ -8,13 +8,15 @@ import net.neoturbine.sors.taxes.TaxSubmission
 class CalculateTaxesOwedViewModel : ViewModel() {
     val taxableIncome = MutableLiveData<String>()
     val filingStatusPosition = MutableLiveData<Int>()
-    val calculatedTaxesOwed = taxableIncome.combineWith(filingStatusPosition) { income, currentFilingStatusPosition ->
-        if (income == null || income.isEmpty() || !income.isDigitsOnly() || currentFilingStatusPosition == null)
+    val filingStatus = MutableLiveData<FilingStatus>()
+
+    val calculatedTaxesOwed = taxableIncome.combineWith(filingStatus) { income, currentFilingStatus ->
+        if (income == null || income.isEmpty() || !income.isDigitsOnly() || currentFilingStatus == null)
             ""
         else {
-            val taxBrackets = currentTaxPolicy.brackets[FilingStatus.values()[currentFilingStatusPosition]]
+            val taxBrackets = currentTaxPolicy.brackets[currentFilingStatus]
                     ?: throw IllegalStateException("")
-            val deduction = currentTaxPolicy.standardDeductions[FilingStatus.values()[currentFilingStatusPosition]]
+            val deduction = currentTaxPolicy.standardDeductions[currentFilingStatus]
                     ?: throw IllegalStateException("")
             TaxSubmission(
                     taxBrackets,

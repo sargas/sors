@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="net.neoturbine.sors.CalculateTaxesOwedViewModel" />
+        <variable
+            name="filingStatus"
+            type="net.neoturbine.sors.taxes.FilingStatus" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RadioButton
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:checked="@{filingStatus == vm.filingStatus}"
+            android:text='@{filingStatus == null ? "" : context.getString(filingStatus.displayName)}'
+            tools:text="@string/filing_status_married" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginRight="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItemSecondary"
+            android:text='@{filingStatus == null ? "" : context.getString(filingStatus.description)}'
+            tools:text="@string/filing_status_married_description" />
+    </LinearLayout>
+</layout>
