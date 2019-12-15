@@ -6,11 +6,6 @@
     app:startDestination="@id/welcomeScreen">
 
     <fragment
-        android:id="@+id/calculateTaxesOwed"
-        android:name="net.neoturbine.sors.CalculateTaxesOwed"
-        android:label="calculate_taxes_owed_fragment"
-        tools:layout="@layout/calculate_taxes_owed_fragment" />
-    <fragment
         android:id="@+id/welcomeScreen"
         android:name="net.neoturbine.sors.WelcomeScreen"
         android:label="fragment_welcome_screen"

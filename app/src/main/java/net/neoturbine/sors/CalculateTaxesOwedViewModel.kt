@@ -1,13 +1,15 @@
 package net.neoturbine.sors
 
 import androidx.core.text.isDigitsOnly
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import net.neoturbine.sors.taxes.FilingStatus
 import net.neoturbine.sors.taxes.TaxSubmission
 
 class CalculateTaxesOwedViewModel : ViewModel() {
     val taxableIncome = MutableLiveData<String>()
-    val filingStatusPosition = MutableLiveData<Int>()
     val filingStatus = MutableLiveData<FilingStatus>()
 
     val calculatedTaxesOwed = taxableIncome.combineWith(filingStatus) { income, currentFilingStatus ->
