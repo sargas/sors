@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import net.neoturbine.sors.income.IncomeCalculator
 import net.neoturbine.sors.taxes.FilingStatus
 import net.neoturbine.sors.taxes.TaxSubmission
 

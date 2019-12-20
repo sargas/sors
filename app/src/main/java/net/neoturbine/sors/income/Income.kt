@@ -1,4 +1,4 @@
-package net.neoturbine.sors
+package net.neoturbine.sors.income
 
 interface Income {
     val taxableIncome : Int

@@ -1,4 +1,4 @@
-package net.neoturbine.sors
+package net.neoturbine.sors.income
 
 class IncomeCalculator {
     companion object {

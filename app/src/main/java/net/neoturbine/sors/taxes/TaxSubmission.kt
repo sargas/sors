@@ -1,6 +1,6 @@
 package net.neoturbine.sors.taxes
 
-import net.neoturbine.sors.Income
+import net.neoturbine.sors.income.Income
 import java.lang.Integer.min
 import kotlin.math.roundToInt
 

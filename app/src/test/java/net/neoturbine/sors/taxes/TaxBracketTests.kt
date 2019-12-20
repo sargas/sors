@@ -1,7 +1,7 @@
 package net.neoturbine.sors.taxes
 
-import net.neoturbine.sors.Income
-import net.neoturbine.sors.IncomeCalculator
+import net.neoturbine.sors.income.Income
+import net.neoturbine.sors.income.IncomeCalculator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import kotlin.math.roundToInt

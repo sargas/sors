@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import net.neoturbine.sors.IncomeSpecifierDirections
 import net.neoturbine.sors.databinding.IncomeSpecifierFragmentBinding
-
 
 class IncomeSpecifier : Fragment() {
     private lateinit var vm : CalculateTaxesOwedViewModel
