@@ -15,13 +15,13 @@ class CalculateTaxesOwedViewModelTest {
     }
 
     @Test
-    fun startsWithNothing() {
+    fun `Starts With Nothing`() {
         assertThat(viewModel.filingStatus.value).isNull()
         assertThat(viewModel.calculatedTaxesOwed.value).isNull()
     }
 
     @Test
-    fun recalculatesTax() {
+    fun `Recalculates Taxes`() {
         viewModel.taxableIncome.value = "1234"
         viewModel.filingStatus.value = FilingStatus.SINGLE
         assertThat(viewModel.calculatedTaxesOwed.observedValue).isEqualTo("0")

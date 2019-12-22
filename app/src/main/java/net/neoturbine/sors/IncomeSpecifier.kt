@@ -1,13 +1,12 @@
 package net.neoturbine.sors
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
-import net.neoturbine.sors.IncomeSpecifierDirections
 import net.neoturbine.sors.databinding.IncomeSpecifierFragmentBinding
 
 class IncomeSpecifier : Fragment() {
@@ -23,6 +22,7 @@ class IncomeSpecifier : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = IncomeSpecifierFragmentBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
         binding.vm = vm
 
         binding.nextButton.setOnClickListener {button ->

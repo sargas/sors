@@ -9,4 +9,5 @@
     <string name="welcome_text">This App will estimate your Federal Tax Refund assuming it is very simple &#8212; tax credits, income that would not be on a W-2, most deductions, and other taxable circumstances are unknown to this App.</string>
     <string name="next_button">Next</string>
     <string name="filing_status_chooser_help_text">Will You File As:</string>
+    <string name="taxes_owed_label">Taxes Owed:</string>
 </resources>

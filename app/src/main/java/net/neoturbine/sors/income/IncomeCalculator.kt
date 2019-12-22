@@ -8,4 +8,3 @@ class IncomeCalculator {
 
     private class IncomeFromTaxableIncome(override val taxableIncome : Int) : Income
 }
-
