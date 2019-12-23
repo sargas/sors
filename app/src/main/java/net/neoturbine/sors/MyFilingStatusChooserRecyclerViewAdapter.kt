@@ -10,7 +10,8 @@ import net.neoturbine.sors.taxes.FilingStatus
 
 class MyFilingStatusChooserRecyclerViewAdapter(
         private val mValues: List<FilingStatus>,
-        private val viewModel: CalculateTaxesOwedViewModel)
+        private val viewModel: CalculateTaxesOwedViewModel,
+        private val lifecycleOwner: LifecycleOwner)
     : RecyclerView.Adapter<MyFilingStatusChooserRecyclerViewAdapter.ViewHolder>() {
 
     init {
@@ -22,7 +23,7 @@ class MyFilingStatusChooserRecyclerViewAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FragmentFilingStatusChooserBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false)
-        binding.lifecycleOwner = parent.context as LifecycleOwner
+        binding.lifecycleOwner = lifecycleOwner
         return ViewHolder(binding)
     }
 

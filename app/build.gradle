@@ -16,6 +16,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArgument "listener", "leakcanary.FailTestOnLeakRunListener"
     }
 
     buildTypes {
@@ -39,6 +40,7 @@ android {
 dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
     def nav_version = "2.1.0"
+    def leakCanaryVersion = 2.0
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -55,6 +57,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
+
     testImplementation 'junit:junit:4.12'
     testImplementation "org.assertj:assertj-core:3.14.0"
     testImplementation "androidx.arch.core:core-testing:2.1.0"
@@ -63,4 +67,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
+    androidTestImplementation "com.squareup.leakcanary:leakcanary-android-instrumentation:${leakCanaryVersion}"
 }

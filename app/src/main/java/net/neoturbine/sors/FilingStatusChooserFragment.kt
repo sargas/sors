@@ -36,7 +36,7 @@ class FilingStatusChooserFragment : Fragment() {
             layoutManager = LinearLayoutManager(context).apply {
                 addItemDecoration(DividerItemDecoration(context, orientation))
             }
-            adapter = MyFilingStatusChooserRecyclerViewAdapter(FilingStatus.values().asList(), vm)
+            adapter = MyFilingStatusChooserRecyclerViewAdapter(FilingStatus.values().asList(), vm, viewLifecycleOwner)
         }
 
         view.findViewById<View>(R.id.next_button).setOnClickListener {button ->
